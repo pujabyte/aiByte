@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@plasmicapp/cli": "^0.1.348",
+    "@plasmicapp/loader-nextjs": "^1.0.444",
     "@plasmicapp/react-web": "^0.2.407",
     "next": "14.2.33",
+    "or": "^0.2.0",
     "react": "^18",
     "react-dom": "^18"
   },
@@ -20,7 +22,7 @@
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
-    "eslint-config-next": "14.2.33",
+    "eslint-config-next": "^16.0.3",
     "typescript": "^5"
   }
 }

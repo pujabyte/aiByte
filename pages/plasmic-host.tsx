@@ -6,10 +6,12 @@ import {
   registerComponent,
 } from "@plasmicapp/react-web/lib/host";
 
-// Import komponen shadcn
-import { Button } from "@/components/ui/button";
-import { Card } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
+// Import komponen shadcn (relative terhadap folder /pages)
+import { Button } from "../components/ui/button";
+import { Card } from "../components/ui/card";
+import { Input } from "../components/ui/input";
+
+
 
 // =====================================
 // REGISTER SHADCN COMPONENTS KE PLASMIC
@@ -18,7 +20,8 @@ import { Input } from "@/components/ui/input";
 // BUTTON
 registerComponent(Button, {
   name: "ShadcnButton",
-  importPath: "@/components/ui/button",
+  // importPath dipakai oleh Plasmic Codegen saat generate code
+  importPath: "./components/ui/button",
   props: {
     children: "slot",
     variant: {
@@ -43,7 +46,7 @@ registerComponent(Button, {
 // CARD (container)
 registerComponent(Card, {
   name: "ShadcnCard",
-  importPath: "@/components/ui/card",
+  importPath: "./components/ui/card",
   props: {
     children: "slot",
     className: { type: "class" },
@@ -53,7 +56,7 @@ registerComponent(Card, {
 // INPUT
 registerComponent(Input, {
   name: "ShadcnInput",
-  importPath: "@/components/ui/input",
+  importPath: "./components/ui/input",
   props: {
     placeholder: "string",
     type: {
@@ -61,7 +64,8 @@ registerComponent(Input, {
       options: ["text", "email", "password", "number"],
     },
     value: "string",
-    onChange: "eventHandler",
+    // gunakan "function" (bukan "eventHandler") untuk host codegen
+    onChange: "function",
     className: { type: "class" },
   },
 });
